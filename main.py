@@ -32,21 +32,6 @@ def time(t: str):
         return str(int(t[:2])) + t[2:] + ' am'
 
 
-trump_dict = {'killing': 'https://cdn.discordapp.com/attachments/749875426859679855/852374687945326592/iu.png',
-              'IQ': 'https://cdn.discordapp.com/attachments/749875426859679855/852376320397541386/iu.png',
-              'NK': 'https://cdn.discordapp.com/attachments/749875426859679855/852376371891535872/iu.png',
-              'covfefe': 'https://cdn.discordapp.com/attachments/749875426859679855/852376415487524874/iu.png',
-              'Diet-Coke': 'https://cdn.discordapp.com/attachments/749875426859679855/852376481266401340/iu.png',
-              'greta': 'https://cdn.discordapp.com/attachments/749875426859679855/852376556474728448/iu.png',
-              'schlonged': 'https://cdn.discordapp.com/attachments/749875426859679855/852376706932670504/iu.png',
-              'Jews': 'https://cdn.discordapp.com/attachments/749875426859679855/852376847903227924/iu.png',
-              'legos': 'https://cdn.discordapp.com/attachments/749875426859679855/852376989791944744/iu.png',
-              'short': 'https://cdn.discordapp.com/attachments/749875426859679855/852377048772771850/iu.png',
-              'buzz': 'https://cdn.discordapp.com/attachments/749875426859679855/852377103936258078/iu.png',
-              'global-warming': 'https://cdn.discordapp.com/attachments/749875426859679855/852377279665405992/iu.png',
-              'Kanye': 'https://cdn.discordapp.com/attachments/749875426859679855/852377312620314664/iu.png',
-              'asians': 'https://cdn.discordapp.com/attachments/749875426859679855/852377391846391888/iu.png'}
-
 
 @client.command()
 async def lottery(ctx):
@@ -327,20 +312,6 @@ async def fish(ctx):
     await ctx.send(discord.utils.get(ctx.guild.roles, name="big bitch").mention)
     await ctx.send('This motherfucker above^ killed Mimi\'s fish apparently')
     await ctx.send(discord.utils.get(ctx.guild.roles, name="togedemaru").mention)
-
-
-@client.command()
-async def trump(ctx, *args):
-    if len(args) > 0:
-        for i in args:
-            try:
-                await ctx.send(trump_dict[i])
-            except KeyError:
-                await ctx.send('Could not find that image\n:///')
-    else:
-        await ctx.send(list(trump_dict.values())[random.randint(0, len(trump_dict.values()) - 1)])
-
-
 
 
 @client.command()
